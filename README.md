@@ -4,10 +4,11 @@
 
 ### AI-Powered Legal Advisor
 
-[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
-[![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
-[![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-F55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com)
-[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
+<a href="https://lexibot-rkka.onrender.com" target="_blank">
+  <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-7c3aed?style=for-the-badge&logoColor=white" alt="Live Demo"/>
+</a>
+
+---
 
 <img src="https://img.shields.io/badge/Status-Live-success?style=flat-square" />
 <img src="https://img.shields.io/badge/AI_Model-LLaMA_3.3_70B-blueviolet?style=flat-square" />
@@ -138,39 +139,6 @@ http://localhost:5000
 
 ---
 
-## 🔌 API Endpoints
-
-| Method | Endpoint | Description |
-|--------|----------|-------------|
-| `GET` | `/` | Serve frontend |
-| `POST` | `/analyze` | Analyze PDF → summary, recommendation & risk score |
-| `POST` | `/transcribe` | Transcribe voice query using Whisper v3 |
-| `GET` | `/download` | Download generated summary PDF |
-
-### `/analyze` Request
-
-```
-Content-Type: multipart/form-data
-
-pdf   → legal case PDF file
-query → user's legal question (optional)
-```
-
-### `/analyze` Response
-
-```json
-{
-  "summary": "Case summary text...",
-  "query": "User's legal question",
-  "recommendation": "Legal advice with similar cases...",
-  "risk": {
-    "score": 75,
-    "verdict": "Strong Case",
-    "reason": "Clear breach of contract with documented evidence"
-  }
-}
-```
-
 ---
 
 ## 📜 License
@@ -184,6 +152,10 @@ This project is licensed under the **MIT License** — see [LICENSE](LICENSE) fo
 Made with ❤️ by **Sagar Jain**
 
 [![GitHub](https://img.shields.io/badge/GitHub-sagarjain2205-181717?style=for-the-badge&logo=github)](https://github.com/sagarjain2205)
+[![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://python.org)
+[![Flask](https://img.shields.io/badge/Flask-2.x-000000?style=for-the-badge&logo=flask&logoColor=white)](https://flask.palletsprojects.com)
+[![Groq](https://img.shields.io/badge/Groq-LLaMA_3.3_70B-F55036?style=for-the-badge&logo=groq&logoColor=white)](https://groq.com)
+[![License](https://img.shields.io/badge/License-MIT-purple?style=for-the-badge)](LICENSE)
 
 ⚖️ *LexiBot — Democratizing Legal Knowledge with AI*
 
