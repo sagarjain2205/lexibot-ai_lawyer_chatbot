@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Raleway:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap');
+
+/* ── Reset ── */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* ── CSS Variables ── */
+:root {
+  --bg:        #05000f;
+  --bg2:       #0c0020;
+  --glass:     rgba(20, 0, 40, 0.6);
+  --glass2:    rgba(30, 0, 60, 0.4);
+  --border:    rgba(124, 58, 237, 0.25);
+  --border2:   rgba(168, 85, 247, 0.4);
+
+  --purple:    #7c3aed;
+  --purple2:   #a855f7;
+  --purple3:   #c084fc;
+  --gold:      #f5c842;
+  --gold2:     #fde68a;
+
+  --text:      #f3eeff;
+  --text2:     #c4b5fd;
+  --text3:     #9f7aea;
+
+  --success:   #10b981;
+  --danger:    #ef4444;
+  --warning:   #f59e0b;
+
+  --radius:    16px;
+  --radius-sm: 10px;
+  --shadow:    0 8px 32px rgba(124, 58, 237, 0.15);
+}
+
+/* ── Base ── */
+html { scroll-behavior: smooth; }
+
+body {
+  font-family: 'Raleway', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ── Scrollbar ── */
+::-webkit-scrollbar       { width: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--purple); border-radius: 3px; }

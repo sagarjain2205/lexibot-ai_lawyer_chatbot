@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>LexiBot — AI Legal Advisor</title>
+
+  <!-- CSS Files -->
+  <link rel="stylesheet" href="/static/css/base.css"/>
+  <link rel="stylesheet" href="/static/css/animations.css"/>
+  <link rel="stylesheet" href="/static/css/layout.css"/>
+  <link rel="stylesheet" href="/static/css/components.css"/>
+</head>
+<body>
+
+  <!-- Stars Canvas -->
+  <canvas id="starfield" style="position:fixed;inset:0;z-index:0;pointer-events:none;"></canvas>
+
+  <!-- Ambient Blobs -->
+  <div class="blob blob-1"></div>
+  <div class="blob blob-2"></div>
+  <div class="blob blob-3"></div>
+
+  <div class="wrapper">
+
+    <!-- Header -->
+    <header>
+      <div class="badge">
+        <div class="badge-dot"></div>
+        AI-Powered Legal Intelligence
+      </div>
+      <span class="logo">LEXIBOT</span>
+      <p class="tagline">Your Personal AI Legal Advisor</p>
+      <div class="divider-line"></div>
+
+      <div class="stats-bar">
+        <div class="stat">
+          <div class="stat-num">99%</div>
+          <div class="stat-label">Accuracy</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">LLaMA</div>
+          <div class="stat-label">AI Model</div>
+        </div>
+        <div class="stat">
+          <div class="stat-num">⚡ Fast</div>
+          <div class="stat-label">Powered by Groq</div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Main Input Grid -->
+    <div class="main-grid fade-in">
+
+      <!-- Left: Upload + Query -->
+      <div class="card">
+        <div class="card-title">Case Input</div>
+
+        <div class="upload-zone" id="uploadZone">
+          <span class="upload-icon">📄</span>
+          <div class="upload-text">Drop your PDF here or <span>click to browse</span></div>
+          <div class="upload-subtext">Legal case files, contracts, agreements</div>
+          <input type="file" id="pdfInput" accept=".pdf" style="display:none"/>
+        </div>
+        <div class="file-name" id="fileName">
+          <span>📎</span>
+          <span id="fileNameText"></span>
+        </div>
+
+        <div class="input-group">
+          <label class="input-label">Your Legal Query</label>
+          <textarea id="queryInput" rows="3"
+            placeholder="e.g. What are my chances of winning? Can the defendant appeal?"></textarea>
+        </div>
+
+        <button class="voice-btn" id="voiceBtn" onclick="toggleVoice()">
+          <span>🎙️</span>
+          <span id="voiceBtnText">Record Voice Query</span>
+        </button>
+        <div class="voice-transcript" id="voiceTranscript"></div>
+
+        <div class="error-box" id="errorBox">
+          <span>⚠️</span>
+          <span id="errorText"></span>
+        </div>
+
+        <button class="submit-btn" id="submitBtn" onclick="analyzeCase()">
+          ⚖ Analyse Case
+        </button>
+        <button class="clear-btn" onclick="resetAll()">
+          ↺ Clear &amp; New File
+        </button>
+      </div>
+
+      <!-- Right: Risk Score Panel -->
+      <div class="card" id="rightPanel">
+        <div id="defaultRight" style="height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:16px;opacity:0.4;">
+          <div style="font-size:4rem;">⚖️</div>
+          <div style="font-family:'Cinzel',serif;font-size:1rem;color:var(--text3);letter-spacing:3px;text-align:center;">
+            Upload a case PDF<br/>to begin analysis
+          </div>
+        </div>
+
+        <div id="riskPanel" style="display:none;">
+          <div class="card-title">Legal Risk Score</div>
+          <div class="risk-card">
+            <div class="risk-circle" id="riskCircle">
+              <div>
+                <div class="risk-num" id="riskNum">—</div>
+                <div style="font-size:0.6rem;color:var(--text3);letter-spacing:2px;margin-top:2px;">/ 100</div>
+              </div>
+            </div>
+            <div class="risk-verdict" id="riskVerdict">Awaiting Analysis</div>
+            <div class="risk-bar-wrap">
+              <div class="risk-bar" id="riskBar"></div>
+            </div>
+            <div class="risk-reason" id="riskReason">Submit a case to get your legal risk score.</div>
+          </div>
+
+          <div class="loading-overlay" id="loadingOverlay">
+            <div class="loader"></div>
+            <div class="loading-text" id="loadingText">Analysing Case...</div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Output Section -->
+    <div class="output-section" id="outputSection">
+      <div class="output-grid">
+
+        <div class="card fade-in">
+          <div class="card-title">Case Summary</div>
+          <div class="output-text" id="summaryOut"></div>
+          <a class="download-btn" href="/download" download>⬇ Download Summary PDF</a>
+        </div>
+
+        <div class="card fade-in">
+          <div class="card-title">Legal Recommendation</div>
+          <div class="query-chip" id="queryChip"></div>
+          <div class="output-text" id="recommendOut" style="margin-top:12px;"></div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      <div class="footer-line"></div>
+      <div class="footer-text">LexiBot &nbsp;·&nbsp; AI Legal Intelligence &nbsp;·&nbsp; Powered by Groq &amp; LLaMA</div>
+    </footer>
+
+  </div>
+
+  <!-- JS Files -->
+  <script src="/static/js/stars.js"></script>
+  <script src="/static/js/upload.js"></script>
+  <script src="/static/js/voice.js"></script>
+  <script src="/static/js/analyze.js"></script>
+
+</body>
+</html>
