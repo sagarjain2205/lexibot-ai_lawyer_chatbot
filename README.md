@@ -8,6 +8,10 @@
   <img src="https://img.shields.io/badge/🚀%20Live%20Demo-Click%20Here-7c3aed?style=for-the-badge&logoColor=white" alt="Live Demo"/>
 </a>
 
+<a href="https://lexibot-landing-page.onrender.com/" target="_blank">
+  <img src="https://img.shields.io/badge/🌐%20Landing%20Page-Visit%20Here-6366f1?style=for-the-badge&logoColor=white" alt="Landing Page"/>
+</a>
+
 ---
 
 <img src="https://img.shields.io/badge/Status-Live-success?style=flat-square" />
@@ -15,7 +19,6 @@
 <img src="https://img.shields.io/badge/Voice-Whisper_v3-orange?style=flat-square" />
 
 </div>
-
 ---
 
 ## 🧠 What is LexiBot?
